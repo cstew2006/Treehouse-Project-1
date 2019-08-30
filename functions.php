@@ -291,3 +291,4 @@ function printQuote($array){
     echo $colors[rand(0, 2)];
   }
 ?>
+
