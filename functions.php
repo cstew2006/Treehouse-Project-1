@@ -215,13 +215,13 @@ function getRandomQuote($array){
 
 //printQuote funtion will print the returned quote from the getRandomQuote function
 
-function printQuote($array){
-
-    $aQuote = getRandomQuote($array);
+function printQuote(){
+  $aQuote = getRandomQuote($quote);
 
     $quoteOutput = '';
 
-    if ($aQuote['citation'] != '' && $aQuote['year'] != '' && $aQuote['tag'] != ''){
+
+    if ($aQuote['citation'] != '' || $aQuote['year'] != '' || $aQuote['tag'] != ''){
 
       $quoteOutput = "<p class='quote'>" . $aQuote['quote'] . "</p>";
       $quoteOutput .= "<p class='source'>" . $aQuote['source'];
@@ -230,24 +230,6 @@ function printQuote($array){
       $quoteOutput .= "<br/>";
       $quoteOutput .= "</p>";
       $quoteOutput .= "<p class='tag'>Tag:" . $aQuote['tag'] . "</p>";
-
-    } elseif ($aQuote['citation'] != '') {
-
-        $quoteOutput = "<p class='quote'>" . $aQuote['quote'] . "</p>";
-        $quoteOutput .= "<p class='source'>" . $aQuote['source'];
-        $quoteOutput .= "<span class='citation'>" . $aQuote['citation'] . "</span>";
-
-    } elseif ($aQuote['year'] != '') {
-
-        $quoteOutput = "<p class='quote'>" . $aQuote['quote'] . "</p>";
-        $quoteOutput .= "<p class='source'>" . $aQuote['source'];
-        $quoteOutput .= "<span class='year'>" . $aQuote['year'] . "</span>";
-
-    } elseif ($aQuote['tag'] != '') {
-
-        $quoteOutput = "<p class='quote'>" . $aQuote['quote'] . "</p>";
-        $quoteOutput .= "<p class='source'>" . $aQuote['source'];
-        $quoteOutput .= "<p class='tag'>Tag: " . $aQuote['tag'] . "</p>";
 
     } else {
 
@@ -263,32 +245,5 @@ function printQuote($array){
 
   //Running the printQuote function
 
-  printQuote($quotes);
 
-  function color() {
-    $color1 = "#";
-    $color1 .= dechex(rand(0, 15));
-    $color1 .= dechex(rand(0, 15));
-    $color1 .= dechex(rand(0, 15));
-    $color1 .= dechex(rand(0, 15));
-    $color1 .= 0;
-    $color1 .= 0;
-    $color2 = "#";
-    $color2 .= dechex(rand(0, 15));
-    $color2 .= dechex(rand(0, 15));
-    $color2 .= 0;
-    $color2 .= 0;
-    $color2 .= dechex(rand(0 ,15));
-    $color2 .= dechex(rand(0, 15));
-    $color3 = "#";
-    $color3 .= 0;
-    $color3 .= 0;
-    $color3 .= dechex(rand(0, 15));
-    $color3 .= dechex(rand(0, 15));
-    $color3 .= dechex(rand(0, 15));
-    $color3 .= dechex(rand(0, 15));
-    $colors = [$color1, $color2, $color3];
-    echo $colors[rand(0, 2)];
-  }
 ?>
-
