@@ -216,7 +216,7 @@ function getRandomQuote($array){
 //printQuote funtion will print the returned quote from the getRandomQuote function
 
 function printQuote(){
-  $aQuote = getRandomQuote($quote);
+  $aQuote = getRandomQuote($quotes);
 
     $quoteOutput = '';
 
