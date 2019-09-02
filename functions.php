@@ -244,7 +244,5 @@ function printQuote(){
 
   }
 
-  //Running the printQuote function
-
 
 ?>
